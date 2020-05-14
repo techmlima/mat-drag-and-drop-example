@@ -1,0 +1,13 @@
+<div class="margin-custom">
+  <div class="example-container" *ngFor="let zoologico of zoologicos; let i = index">
+    <h2>{{'Bloco ' + (i+1)}}</h2>
+    <div (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="nomesBlocos" [cdkDropListData]="zoologico.animais"
+      class="example-list" id="{{zoologico.nome}}" cdkDropList>
+  
+      <!-- Criando os blocos com um for -->
+      <div class="example-box" *ngFor="let animal of zoologico.animais" cdkDrag>
+        <span>{{animal}}</span>
+      </div>
+    </div>
+  </div>
+</div>
