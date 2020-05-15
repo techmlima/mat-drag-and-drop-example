@@ -31,7 +31,7 @@ Senhoras e senhores lhes apresento o ".html"
 A diferença desse para os demais exemplo é que o utilizamos o atributo id para identificar a DropList deste modo podemos criá-las através da iteração em uma lista.
 
 Agora vamos para o "".ts"
-![Screenshot](https://server/group/jobs/raw/master/doc/drag-and-drop.ts.jpg)
+![Screenshot](doc/drag-and-drop.ts.jpg)
 Nada de mais concordam? Entretanto, tive muita dificuldade para encontrar algo que me ajuda-se a fazê-lo quando precisei.
 
 **Obrigado por chegar até aqui! Fim**
