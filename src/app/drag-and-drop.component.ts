@@ -8,16 +8,20 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class DragAndDropComponent {
 
+  /* De preferência criem um classes para representar seus objetos */
   zoologicos = [
     { nome:'Zoo1', animais: ['Leão', 'Macaco'] },
     { nome:'Zoo2', animais: ['Tigre', 'Elefante'] }
   ];
 
-  nomesBlocos = [...this.zoologicos.map(zoo => zoo.nome)];
+  /* o resultado será uma lista com [Zoo1, Zoo2] */
+  nomesDropList = [...this.zoologicos.map(zoo => zoo.nome)];
 
-  drop(event: CdkDragDrop<any[]>) {
-    console.log(this.nomesBlocos);
-    
+  /* 
+   * Esta função é padrão, em qualquer exemplo no site do Angular Material você irá encontrá-la implementada deste modo. 
+   * Pelo menos até este momento :D! 
+   */
+  drop(event: CdkDragDrop<any[]>) {    
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
