@@ -8,7 +8,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class DragAndDropComponent {
 
-  /* De preferência criem um classes para representar seus objetos */
+  /* De preferência criem classes para representar seus objetos */
   zoologicos = [
     { nome:'Zoo1', animais: ['Leão', 'Macaco'] },
     { nome:'Zoo2', animais: ['Tigre', 'Elefante'] }
