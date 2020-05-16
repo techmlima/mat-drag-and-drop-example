@@ -1,4 +1,4 @@
-# Drag and Drop com Angualar Material e DropoList dinâmica
+# Drag and Drop com Angular Material e DropoList dinâmica
 Já precisou criar um drag and drop com uma lista de objetos e não quis implementar cada DropList em um trecho html diferente?
 Eu também e por este motivo criei um simples exemplo de como utilizar o drag and drop do Angular Material com este intuito.
 
