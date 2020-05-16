@@ -5,7 +5,7 @@ Eu também e por este motivo criei um simples exemplo de como utilizar o drag an
 ![Drag and Drop com DropList dinâmica](https://github.com/arthur-lima-dev/mat-drag-and-drop-example/blob/master/doc/drag-and-drop.gif)
 
 ### Mas o que tem de extraordinário nisso?
-Nada de mais! Rsrs, mas na maioría dos exemplos que você vai encontrar cada DropList tem um respectivo trecho html, já aqui não, as DropList's são inseridas dinamicamente no html ao iterarmos numa lista de objetos.
+Nada de mais! Rsrs, mas na maioria dos exemplos que você vai encontrar cada DropList tem um respectivo trecho html, já aqui não, as DropList's são inseridas dinamicamente no html ao iterarmos numa lista de objetos.
 
 # Pressupostos!
   - Irei do ponto de partida de que você ja sabe criar e configurar um projeto Angular IO
