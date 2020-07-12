@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import {Zoologico} from "./model/zoologico";
-import {Animal} from "./model/animal";
+import {ZoologicoModel} from "./model/zoologico.model";
+import {AnimalModel} from "./model/animal.model";
 
 @Component({
   selector: 'app-drag-and-drop',
@@ -10,9 +10,24 @@ import {Animal} from "./model/animal";
 })
 export class DragAndDropComponent {
 
+  /**
+   * De preferência crie um serviço para buscar estes objetos a partir de um banco de dados
+   */
   zoologicos = [
-    new Zoologico('Zoo1', [new Animal('Leão'), new Animal('Macaco'), new Animal('Girafa')]),
-    new Zoologico('Zoo2', [new Animal('Tigre'), new Animal('Elefante'), new Animal('Zebra')])
+    new ZoologicoModel('Zoo1',
+      [
+        new AnimalModel('Leão'),
+        new AnimalModel('Macaco'),
+        new AnimalModel('Girafa')
+      ]
+    ),
+    new ZoologicoModel('Zoo2',
+      [
+        new AnimalModel('Tigre'),
+        new AnimalModel('Elefante'),
+        new AnimalModel('Zebra')
+      ]
+    )
   ];
 
   /**
@@ -26,7 +41,7 @@ export class DragAndDropComponent {
    * @param e
    * @param animal
    */
-  selecionarAnimal(e: Event, animal: Animal) {
+  selecionarAnimal(e: Event, animal: AnimalModel) {
     if ((<KeyboardEvent>e).ctrlKey) {
       animal.selecionado = !animal.selecionado;
     }
@@ -37,8 +52,8 @@ export class DragAndDropComponent {
    * Caso tenham animais selecionados então os mesmos serão movidos
    * @param event
    */
-  dropItems(event: CdkDragDrop<Array<Animal>>) {
-    let animais: Array<Animal> = event.previousContainer.data;
+  dropItems(event: CdkDragDrop<Array<AnimalModel>>) {
+    let animais: Array<AnimalModel> = event.previousContainer.data;
     let animaisSelecionados = animais.filter(a => a.selecionado);
 
     if (animaisSelecionados.length > 1) {
@@ -58,11 +73,11 @@ export class DragAndDropComponent {
    *
    * @param event do tipo cdkDropListDropped
    * @param indiceAnterior -1 como escape para comportamento default
-   * @param agregarAoIndiceAtual 0 como escape para comportamento default
+   * @param valorAgregacaoIndiceAtual  0 como escape para comportamento default
    */
-  drop(event: CdkDragDrop<Array<Animal>>, indiceAnterior: number, agregarAoIndiceAtual: number) {
+  drop(event: CdkDragDrop<Array<AnimalModel>>, indiceAnterior: number, valorAgregacaoIndiceAtual : number) {
     const previous = indiceAnterior > -1 ? indiceAnterior : event.previousIndex;
-    const current = event.currentIndex + agregarAoIndiceAtual;
+    const current = event.currentIndex + valorAgregacaoIndiceAtual ;
 
     if (event.previousContainer === event.container) {
       moveItemInArray(
@@ -85,7 +100,7 @@ export class DragAndDropComponent {
    * um, arrastar outro e o selecionado ficar para traz
    * @param animal
    */
-  prepararArrasto(animal: Animal) {
+  prepararArrasto(animal: AnimalModel) {
     animal.selecionado = true;
   }
 

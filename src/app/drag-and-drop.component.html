@@ -1,8 +1,10 @@
 <div class="margin-custom">
   <div class="example-container" *ngFor="let zoologico of zoologicos; let i = index">
     <h2>{{'Lista de soltar ' + (i + 1)}}</h2>
-    <div class="example-list" (cdkDropListDropped)="dropItems($event)" [cdkDropListConnectedTo]="nomesDropList"
-      [cdkDropListData]="zoologico.animais" id="{{zoologico.nome}}" cdkDropList>
+    <div class="example-list" id="{{zoologico.nome}}"
+         [cdkDropListConnectedTo]="nomesDropList"
+         [cdkDropListData]="zoologico.animais"
+         (cdkDropListDropped)="dropItems($event)" cdkDropList>
 
       <div class="example-box" *ngFor="let animal of zoologico.animais"
            [ngClass]="{'selected' : animal.selecionado}"

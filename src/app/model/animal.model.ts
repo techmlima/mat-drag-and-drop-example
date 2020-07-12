@@ -1,6 +1,6 @@
 import {DragDropAtributos} from "./interface/drag-drop-atributos";
 
-export class Animal implements DragDropAtributos {
+export class AnimalModel implements DragDropAtributos {
   selecionado: boolean;
 
   constructor(
