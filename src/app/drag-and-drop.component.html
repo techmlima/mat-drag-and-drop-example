@@ -1,14 +1,15 @@
 <div class="margin-custom">
-
-  <!-- Iterando numa lista para criar os cdkDropList's. São os elemento que contém os itens que pode ser arrastados -->
   <div class="example-container" *ngFor="let zoologico of zoologicos; let i = index">
     <h2>{{'Lista de soltar ' + (i + 1)}}</h2>
-    <div class="example-list" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="nomesDropList"
+    <div class="example-list" (cdkDropListDropped)="dropItems($event)" [cdkDropListConnectedTo]="nomesDropList"
       [cdkDropListData]="zoologico.animais" id="{{zoologico.nome}}" cdkDropList>
 
-      <!-- Criando os cdkDrag's. São os itens que podem ser arrastados -->
-      <div class="example-box" *ngFor="let animal of zoologico.animais" cdkDrag>
-        <span>{{animal}}</span>
+      <div class="example-box" *ngFor="let animal of zoologico.animais"
+           [ngClass]="{'selected' : animal.selecionado}"
+           (cdkDragStarted)="prepararArrasto(animal)"
+           (click)="selecionarAnimal($event, animal)"
+           cdkDrag>
+        <span>{{animal.especie}}</span>
       </div>
     </div>
   </div>
