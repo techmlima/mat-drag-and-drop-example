@@ -11,7 +11,7 @@ Nada de mais! Rsrs, mas na maioria dos exemplos que você vai encontrar cada Dro
   - Irei do ponto de partida de que você ja sabe criar e configurar um projeto Angular IO
   - Explicarei apenas como foi implementado a solução. Por este motivo leia atentamente a documentação do site [Angular Material - Drag and Drop](https://material.angular.io/cdk/drag-drop/overview)
   - Vale lembrar que as bibliotecas utilizadas e suas respectivas versões estão disponíveis no package.json
-  - Este artigo também está no blog [Dev Friends - Drag and drop com Angular Material e DropList dinâmica](https://developers-friends.gitbook.io/blog/angular/drag-and-drop-com-angular-material-e-droplist-dinamica) da uma olhada lá, vai!
+  - Este artigo também está no blog [Dev Friends - Drag and drop com Angular Material e DropList dinâmica](https://developers-friends.gitbook.io/blog/angular/drag-and-drop-com-angular-material-e-droplist-dinamica)!
 
 ### Inicializando a aplicação 
 ```sh
